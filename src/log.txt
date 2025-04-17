@@ -1,0 +1,115 @@
+// import React, { useEffect, useRef, useState } from 'react'
+
+// export default function LoginPage() {
+
+//     const [isSignUp, setIsSignUp] = useState(true);
+//     const [user, setUser] = useState({ name: "", email: "", password: "", confPassword: "" });
+
+
+//     function handlelogin() {
+//         setIsSignUp(!isSignUp);
+//     }
+
+//     const handleChange = (e) => {
+//         setUser({
+//             ...user,
+//             [e.target.name]: e.target.value
+//         }
+//         );
+//     };
+
+//     function handlebtnClick(e) {
+
+//        e.preventDefault();
+
+//         if (isSignUp) {
+
+//             if (user.password !== user.confPassword) {
+//                 alert("Password and  Conform Password don't Match !");
+//             }
+//             else {
+//                    console.log("Signup", user);
+//                      setUser({ name: "", email: "", password: "", confPassword: "" });
+//             }
+//         }
+//         else {
+           
+//                 console.log("Login", user);
+//                setUser({ email: "", password: "" });
+//                 
+            
+//         }
+//     }
+
+//     return (
+//         <div className=' w-[100vw] h-[100vh] bg-[url(https://img.freepik.com/premium-photo/stethoscope-medicine-accessories-black-background-with-copy-space_362520-269.jpg?semt=ais_incoming)] bg-no-repeat bg-cover bg-center box-border'>
+
+//             {/* CONTAINER */}
+
+//             <div className="container h-[100%] flex items-center justify-center relative backdrop-blur-[2px]">
+
+//                 <div className="login w-[40vw]  bg-[#3a3b3d] p-[2vw] rounded-[1vw] absolute z-1 box-shadow ml-[30vw] flex justify-center items-center flex-col gap-[5vh]">
+
+//                     {/* LOGO */}
+//                     <div className="logo">
+//                         <img className='w-[8vw]' src="./assets/logo.jpeg" alt="" />
+//                     </div>
+//                     {/* TITLE */}
+//                     <h1 className='text-[#5ef579] font-bold text-[3.5vw] font-sans'>MediConnect</h1>
+//                     {/* FORM */}
+//                     <form onSubmit={handlebtnClick} className='flex flex-col items-center gap-[3vh]'>
+//                         {/* EMAIL */}
+//                         <div className='email'>
+//                             <input type="email" required onChange={handleChange} name='email' value={user.email} className=' w-[30vw] text-sm text-[#73e3e9] bg-transparent border-1 rounded-[5px] border-[#73e3e9] p-[6px]' placeholder='Email' />
+//                         </div>
+//                         {/* NAME */}
+//                         {(isSignUp) &&
+//                             <div className="name">
+//                                 <input type="text" required onChange={handleChange} name='name' value={user.name} className=' w-[30vw] text-sm text-[#73e3e9] bg-transparent border-1 rounded-[5px] border-[#73e3e9] p-[6px]' placeholder='Name' />
+//                             </div>
+
+//                         }
+//                         {/*PASSWORD  */}
+//                         <div className="pass">
+//                             <input type="password" onChange={handleChange} name='password' value={user.password} required minLength={8} maxLength={16} className=' w-[30vw] text-sm text-[#73e3e9] bg-transparent border-1 rounded-[5px] border-[#73e3e9] p-[6px]' placeholder='Password' />
+//                         </div>
+//                         {/* CONFORM PASSWORD */}
+
+//                         {(isSignUp) &&
+//                             <div className="confpass">
+//                                 <input type="password" onChange={handleChange} name='confPassword' value={user.confPassword} required className=' w-[30vw] text-sm text-[#73e3e9] bg-transparent border-1 rounded-[5px] border-[#73e3e9] p-[6px]' placeholder='Conform Password' />
+//                             </div>
+//                         }
+
+//                         {/* BUTTON */}
+
+//                         <button type='submit'  className='border-1 rounded-[30px] text-sm border-[#73e3e9]  text-[#73e3e9] w-[12vw] h-[5vh] hover:bg-[#73e3e9] hover:text-black cursor-pointer'>
+//                             {(isSignUp) ? `Sign UP` : `Login`}
+
+
+//                         </button>
+
+
+//                         {/* ALREDY ACCOUNT */}
+//                         <h4 className=' text-sm text-[#73e3e9]'>
+
+//                             {(isSignUp) ? `Already have an account ? ` : `Don't have an account `}
+
+
+//                             <a onClick={handlelogin} className=' text-sm text-[hsl(262,54%,59%)] hover:text-[hsl(262,54%,65%)] cursor-pointer'>
+
+//                                 {(isSignUp) ? `Login ` : `Sign Up`}
+
+
+//                             </a>
+//                         </h4>
+
+//                     </form>
+
+//                 </div>
+
+//             </div>
+
+//         </div>
+//     )
+// }
